@@ -6,8 +6,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import PageNotFound from './pages/PageNotFound';
 import RedirectExample from './pages/RedirectExample';
-import BooksIndex from './pages/books/Index';
-import BooksShow from  './pages/books/Show';
+import ProjectsIndex from './pages/projects/Index';
+import ProjectsShow from  './pages/projects/Show';
 
 // componants
 import Navbar from './componants/Navbar';
@@ -24,8 +24,8 @@ const App = () => {
                 <Route path={"/redirect-example"} element={<RedirectExample />}/>
 
                 {/* Books */}
-                <Route path={"/books"} element={<BooksIndex />} />
-                <Route path={"/books/:id"} element={<BooksShow />} />
+                <Route path={"/projects"} element={<ProjectsIndex />} />
+                <Route path={"/projects/:slug"} element={<ProjectsShow />} />
 
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
