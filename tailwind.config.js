@@ -16,7 +16,7 @@ module.exports = {
           "primary": "#ABDBAE",
           "primary-content": "#83A886",
           "secondary": "#AFD5DE",
-          "secondaryDark": "#7D9AA1",
+          "secondary-content": "#7D9AA1",
           "info": "#16B6F5",
           "success": "#16F52C",
           "danger": "#F51616",
