@@ -11,25 +11,26 @@ import ProjectsShow from  './pages/projects/Show';
 
 // componants
 import Navbar from './componants/Navbar';
+import Footer from './componants/Footer';
 
 const App = () => {
     return (
         <Router>
-        <Navbar />
+            <Navbar />
 
-            <Routes>
-                <Route path={"/"} element={<Home />}/>
-                <Route path={"/about"} element={<About />}/>
-                <Route path={"/contact"} element={<Contact />}/>
-                <Route path={"/redirect-example"} element={<RedirectExample />}/>
+                <Routes>
+                    <Route path={"/"} element={<Home />}/>
+                    <Route path={"/about"} element={<About />}/>
+                    <Route path={"/contact"} element={<Contact />}/>
+                    <Route path={"/redirect-example"} element={<RedirectExample />}/>
 
-                {/* Books */}
-                <Route path={"/projects"} element={<ProjectsIndex />} />
-                <Route path={"/projects/:slug"} element={<ProjectsShow />} />
+                    {/* Books */}
+                    <Route path={"/projects"} element={<ProjectsIndex />} />
+                    <Route path={"/projects/:slug"} element={<ProjectsShow />} />
 
-                <Route path="*" element={<PageNotFound />} />
-            </Routes>
-
+                    <Route path="*" element={<PageNotFound />} />
+                </Routes>
+            <Footer />
         </Router>
     )
 };
