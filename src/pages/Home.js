@@ -5,13 +5,13 @@ const Home = () => {
         <div className="h-100 px-4 sm:px-8 md:px-16 py-20 bg-accent flex justify-center items-center flex flex-col md:flex-row gap-10">
                 <div className="w-full md:w-1/2 flex flex-col justify-center items-center gap-5">
                     {/* Text */}
-                    <div className="text-center text-[#abdbae] text-[50px] sm:text-[70px] md:text-[90px] lg:text-[110px] font-normal">
+                    <div className="text-center text-primary text-[50px] sm:text-[70px] md:text-[90px] lg:text-[110px] font-handwriting">
                         <h1>
                             Hey, I'm Chloe
                         </h1>
                     </div>
                     
-                    <div className="text-center text-secondary-content text-[20px] sm:text-[25px] md:text-[30px] lg:text-[35px] font-normal">
+                    <div className="text-center text-secondary-content text-[20px] sm:text-[25px] md:text-[30px] lg:text-[35px] font-handwriting">
                         <p>
                             I’m a third-year Creative Computing student in IADT.
                         </p>
@@ -24,7 +24,7 @@ const Home = () => {
 
         {/* Second Part */}
         <div className="h-auto px-4 sm:px-8 md:px-16 lg:px-32 py-10 bg-primary flex flex-col justify-start items-center gap-8 md:flex-col">
-            <div className="text-center text-accent text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-semibold font-mono">
+            <div className="text-center text-accent text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-semibold font-mono">
                 <h1>Some of my projects...</h1>
             </div>
             <div className="w-full flex justify-center gap-8 flex-wrap">

@@ -8,6 +8,7 @@ import PageNotFound from './pages/PageNotFound';
 import RedirectExample from './pages/RedirectExample';
 import ProjectsIndex from './pages/projects/Index';
 import ProjectsShow from  './pages/projects/Show';
+import ProjectCard from './componants/ProjectCard';
 
 // componants
 import Navbar from './componants/Navbar';
@@ -24,7 +25,9 @@ const App = () => {
                     <Route path={"/contact"} element={<Contact />}/>
                     <Route path={"/redirect-example"} element={<RedirectExample />}/>
 
-                    {/* Books */}
+                    <Route path={"/projectcard"} element={<ProjectCard />}/>
+
+                    {/* Projects */}
                     <Route path={"/projects"} element={<ProjectsIndex />} />
                     <Route path={"/projects/:slug"} element={<ProjectsShow />} />
 
