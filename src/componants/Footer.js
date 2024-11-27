@@ -3,7 +3,7 @@
 const Footer = () => {
     return (
         <>
-        <div className="w-full px-10 sm:px-8 md:px-16 lg:px-32 py-10 bg-secondary flex flex-col md:flex-row justify-center items-center gap-20 ">
+        <div className="w-full px-10 sm:px-8 md:px-16 lg:px-32 py-10 bg-secondary flex flex-col md:flex-row justify-center items-center gap-[300px] ">
             <div className="text-center md:text-left text-accent text-[30px] sm:text-[35px] md:text-[45px] lg:text-[50px] font-handwriting">
                 <h2>Let’s be friends :)</h2>
             </div>
@@ -25,7 +25,7 @@ const Footer = () => {
                     </g>
                 </svg>
 
-                    <div className="text-[#fafaf7] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[25px] font-normal">
+                    <div className="text-accent text-[16px] sm:text-[18px] md:text-[20px] lg:text-[25px] font-mono">
                         <p>(085) 776 5393</p>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ const Footer = () => {
                         href="https://github.com/clo12358" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="text-[#fafaf7] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[25px] font-normal underline"
+                        className="text-accent text-[16px] sm:text-[18px] md:text-[20px] lg:text-[25px] font-normal underline"
                     >
                         https://github.com/clo12358
                     </a>

@@ -1,8 +1,21 @@
+import { useNavigate } from 'react-router-dom';
+import image01 from '../images/thumbnail_image0.png';
+
 const Home = () => {
+
+    const navigate = useNavigate();
+
     return (
         <>
        {/* First Part */}
         <div className="h-100 px-4 sm:px-8 md:px-16 py-20 bg-accent flex justify-center items-center flex flex-col md:flex-row gap-10">
+
+
+                {/* Image */}
+                <div className="h-[300px] sm:h-[400px] md:h-[470px] relative rounded-md">
+                <img src={image01} alt='Myself' className='w-full h-[300px] sm:h-[400px] md:h-[470px] relative rounded-md'></img>
+                </div>
+                
                 <div className="w-full md:w-1/2 flex flex-col justify-center items-center gap-5">
                     {/* Text */}
                     <div className="text-center text-primary text-[50px] sm:text-[70px] md:text-[90px] lg:text-[110px] font-handwriting">
@@ -16,10 +29,9 @@ const Home = () => {
                             I’m a third-year Creative Computing student in IADT.
                         </p>
                     </div>
-                    <button className="btn btn-primary btn-lg no-animation text-accent">Get to know me :)</button>
+                    <button className="btn btn-primary btn-lg no-animation text-accent"
+                            onClick={() => navigate('/about')}>Get to know me ;)</button>
                 </div>
-                {/* Image */}
-                <div className="w-full md:w-1/2 h-[300px] sm:h-[400px] md:h-[470px] relative bg-[#d9d9d9] rounded-md"></div>
         </div>
 
         {/* Second Part */}

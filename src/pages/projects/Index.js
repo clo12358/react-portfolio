@@ -1,6 +1,6 @@
-import {  useState  } from "react";
-import projectsJSON from "../../data/projects.json";
-import ProjectCard from "../../componants/ProjectCard";
+// import {  useState  } from "react";
+// import projectsJSON from "../../data/projects.json";
+// import ProjectCard from "../../componants/ProjectCard";
 
 const Index = () => {
 
