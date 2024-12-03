@@ -30,6 +30,7 @@ const App = () => {
                     {/* Projects */}
                     <Route path={"/projects"} element={<ProjectsIndex />} />
                     <Route path={"/projects/:slug"} element={<ProjectsShow />} />
+                    {/* <Route path={"/projects/index"} element={<ProjectsShow />} /> */}
 
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>

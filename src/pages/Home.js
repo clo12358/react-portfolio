@@ -2,55 +2,59 @@ import { useNavigate } from 'react-router-dom';
 import image01 from '../images/thumbnail_image0.png';
 
 const Home = () => {
-
     const navigate = useNavigate();
 
     return (
         <>
-       {/* First Part */}
-        <div className="h-100 px-4 sm:px-8 md:px-16 py-20 bg-accent flex justify-center items-center flex flex-col md:flex-row gap-10">
-
-
-                {/* Image */}
-                <div className="h-[300px] sm:h-[400px] md:h-[470px] relative rounded-md">
-                <img src={image01} alt='Myself' className='w-full h-[300px] sm:h-[400px] md:h-[470px] relative rounded-md'></img>
+            {/* Hero Section */}
+            <div className="min-h-screen bg-accent px-6 sm:px-12 md:px-20 py-16 flex flex-col-reverse md:flex-row items-center gap-12">
+                {/* Text Section */}
+                <div className="w-full md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start gap-6">
+                    <h1 className="text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-handwriting leading-tight">
+                        Hey, I’m Chloe
+                    </h1>
+                    <p className="text-secondary-content text-lg sm:text-xl md:text-2xl lg:text-3xl font-handwriting">
+                        A third-year Creative Computing student at IADT with a passion for design and development.
+                    </p>
+                    <button
+                        className="btn btn-primary btn-md no-animation text-accent px-6 py-3 rounded-md hover:bg-primary-content hover:text-white transition-all duration-300"
+                        onClick={() => navigate('/about')}
+                    >
+                        Get to know me ;)
+                    </button>
                 </div>
-                
-                <div className="w-full md:w-1/2 flex flex-col justify-center items-center gap-5">
-                    {/* Text */}
-                    <div className="text-center text-primary text-[50px] sm:text-[70px] md:text-[90px] lg:text-[110px] font-handwriting">
-                        <h1>
-                            Hey, I'm Chloe
-                        </h1>
-                    </div>
-                    
-                    <div className="text-center text-secondary-content text-[20px] sm:text-[25px] md:text-[30px] lg:text-[35px] font-handwriting">
-                        <p>
-                            I’m a third-year Creative Computing student in IADT.
-                        </p>
-                    </div>
-                    <button className="btn btn-primary btn-lg no-animation text-accent"
-                            onClick={() => navigate('/about')}>Get to know me ;)</button>
-                </div>
-        </div>
 
-        {/* Second Part */}
-        <div className="h-auto px-4 sm:px-8 md:px-16 lg:px-32 py-10 bg-primary flex flex-col justify-start items-center gap-8 md:flex-col">
-            <div className="text-center text-accent text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-semibold font-mono">
-                <h1>Some of my projects...</h1>
-            </div>
-            <div className="w-full flex justify-center gap-8 flex-wrap">
-                <div className="w-full sm:w-[500px] md:w-[600px] lg:w-[700px] h-[200px] sm:h-[250px] md:h-[300px] px-6 sm:px-12 md:px-20 bg-[#d9d9d9] rounded-md flex justify-center items-center">
-                </div>
-                <div className="w-full sm:w-[500px] md:w-[600px] lg:w-[700px] h-[200px] sm:h-[250px] md:h-[300px] px-6 sm:px-12 md:px-20 bg-[#d9d9d9] rounded-md flex justify-center items-center">
+                {/* Image Section */}
+                <div className="w-full md:w-1/2">
+                    <img
+                        src={image01}
+                        alt="Chloe"
+                        className="w-full h-auto max-h-[500px] rounded-lg shadow-lg object-cover"
+                    />
                 </div>
             </div>
-        </div>
 
+            {/* Projects Section */}
+            <div className="bg-primary px-6 sm:px-12 md:px-20 lg:px-32 py-16">
+                {/* Section Title */}
+                <div className="text-center mb-12">
+                    <h2 className="text-accent text-3xl sm:text-4xl md:text-5xl font-handwriting">
+                        Some of my projects
+                    </h2>
+                </div>
 
-
+                {/* Projects Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-gray-200 rounded-lg p-6 flex items-center justify-center h-60 hover:shadow-xl transition-shadow duration-300">
+                        <p className="text-lg text-gray-500 font-mono">Project 1 Placeholder</p>
+                    </div>
+                    <div className="bg-gray-200 rounded-lg p-6 flex items-center justify-center h-60 hover:shadow-xl transition-shadow duration-300">
+                        <p className="text-lg text-gray-500 font-mono">Project 2 Placeholder</p>
+                    </div>
+                </div>
+            </div>
         </>
-    )
+    );
 };
 
 export default Home;

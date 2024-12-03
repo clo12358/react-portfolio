@@ -18,144 +18,190 @@ import photo04 from '../images/photo_04.jpg';
 
 const About = () => {
     return (
-        <>
         <div className="px-6 sm:px-8 lg:px-12 py-12 bg-accent flex flex-col justify-center items-center">
             <div className="w-full max-w-screen-lg flex flex-col gap-10">
-            {/* Introduction Section */}
-            <div className="text-center text-primary-content text-5xl sm:text-6xl lg:text-7xl font-normal font-handwriting">
-            <h1>Hey, I’m Chloe Dwyer!</h1>
-            </div>
-        
-            {/* About Section */}
-            <div className="flex flex-col lg:flex-row justify-start items-center gap-10">
-                <div className="h-[300px] sm:h-[400px] md:h-[470px] relative rounded-md">
-                    <img src={image02} alt="Myself" className='w-full h-[300px] sm:h-[400px] md:h-[470px] relative rounded-md'></img>
+                {/* Introduction Section */}
+                <div className="text-center text-primary-content text-5xl sm:text-6xl lg:text-7xl font-normal font-handwriting">
+                    <h1>Hey, I’m Chloe Dwyer!</h1>
                 </div>
-                <div className="lg:w-1/2 text-black text-lg sm:text-xl lg:text-2xl font-normal font-handwriting">
-                    <p>I am extremely passionate about UI/UX design and Front-End Development. I want to be able to turn my ideas into real-world projects!</p>
-                    <br/><br/>
-                    <p>I am skilled in Front-End Development with HTML, React, Figma, CSS and frameworks such as Tailwind and Bootstrap. I also have experience in JavaScript, C#, Laravel and p5.js.</p>
-                </div>
-            </div>
 
-            {/* Interests Section */}
-            <div>
-                <div className="text-primary text-3xl sm:text-4xl lg:text-5xl font-normal font-handwriting">
-                    <h1>Some of my Interests</h1>
-                </div>
-                
-                {/* Art and Drawing */}
-                <div className="flex flex-col gap-6 mt-8">
-                    <div className="flex items-center gap-3">
-                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none">
-                            <g id="Pen">
-                            <path id="Pen_2" d="M28 0H24.5V3.5H21V7H17.5V10.5H14V14H10.5V17.5H7V21H3.5V24.5H0V35H10.5V31.5H14V28H17.5V24.5H21V21H24.5V17.5H28V14H31.5V10.5H35V7H31.5V3.5H28V0ZM28 14H24.5V17.5H21V21H17.5V24.5H14V28H10.5V24.5H7V21H10.5V17.5H14V14H17.5V10.5H21V7H24.5V10.5H28V14ZM7 24.5H3.5V31.5H10.5V28H7V24.5Z" fill="#7D9AA1"/>
-                            </g>
-                    </svg>
-                        <div className="text-secondary-content text-xl sm:text-2xl lg:text-3xl font-normal font-handwriting">
-                            <h2>Art and Drawing</h2>
-                        </div>
+                {/* About Section */}
+                <div className="flex flex-col lg:flex-row justify-start items-center gap-10">
+                    <div className="lg:w-1/2 text-black text-lg sm:text-xl lg:text-2xl font-normal font-handwriting leading-relaxed">
+                        <p>
+                            I am passionate about UI/UX design and Front-End Development. I bring ideas to life through creative and functional solutions. Let's build something great together!
+                        </p>
                     </div>
-                    <div className="text-black text-base sm:text-lg lg:text-xl font-normal font-mono">
-                        <p>I have a strong passion for art and enjoy drawing in my free time. Toward the end of 2021, I began selling some of my work, creating personalized illustrations of people, pets, and cars. Starting near the holiday season helped me build momentum, and I completed 100 orders within the first three months, with most requests being for portraits of people and pets. As I entered my final year of school, I had to scale back to focus more on academics, though I still enjoyed taking on occasional projects. These days, I still love creating art, focusing mainly on car illustrations, which I often make for friends and family.</p>
-                    </div>
-                        <div>
-                            <Link to={`https://www.instagram.com/designsbyclo_/profilecard/?igsh=eTE3bGNkMDFtaDA2`}>
-                                <button className="btn btn-primary btn-lg no-animation text-accent">View My Instagram</button>
-                            </Link>
-                        </div>
 
-                    {/* Car Carousel */}
-                    <div className="carousel w-full">
-                        <div id="car_slide1" className="carousel-item relative w-full">
-                            <img src={car01} alt='Drawing 1' className="w-full" />
-                            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                                <a href="#car_slide4" className="btn btn-circle">❮</a>
-                                <a href="#car_slide2" className="btn btn-circle">❯</a>
-                            </div>
+                    {/* Picture Section */}
+                    <div className="h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] relative rounded-md lg:ml-10">
+                        <img
+                            src={image02}
+                            alt="Myself"
+                            className="w-full h-full object-cover relative rounded-md shadow-lg"
+                        />
+                    </div>
+                </div>
+
+                {/* Skills & Experience Section */}
+                <div className="bg-primary text-accent py-16 mt-20 rounded-lg shadow-lg">
+                    <div className="text-center mb-10">
+                        <h2 className="text-3xl sm:text-4xl font-semibold mb-6 font-handwriting">My Skills & Experience</h2>
+                        <p className="text-lg sm:text-xl font-light opacity-90">Experienced in front-end development and passionate about creative problem solving.</p>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+                        <div className="flex flex-col items-center bg-primary-content p-6 rounded-lg shadow-md">
+                            <h3 className="text-xl font-semibold mb-4 font-handwriting">UI/UX Design</h3>
+                            <p className="text-lg text-center opacity-90">I craft beautiful and intuitive user interfaces and experiences with a strong focus on design details and user needs.</p>
                         </div>
-                        <div id="car_slide2" className="carousel-item relative w-full">
-                            <img src={people01} alt='Drawing 2' className="w-full" />
-                            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                                <a href="#car_slide1" className="btn btn-circle">❮</a>
-                                <a href="#car_slide3" className="btn btn-circle">❯</a>
-                            </div>
+                        <div className="flex flex-col items-center bg-primary-content p-6 rounded-lg shadow-md">
+                            <h3 className="text-xl font-semibold mb-4 font-handwriting">Front-End Development</h3>
+                            <p className="text-lg text-center opacity-90">Proficient in HTML, React, JavaScript, CSS, and frameworks like Tailwind and Bootstrap to create responsive and interactive web applications.</p>
                         </div>
-                        <div id="car_slide3" className="carousel-item relative w-full">
-                            <img src={car04} alt='Drawing 3' className="w-full" />
-                            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                                <a href="#car_slide2" className="btn btn-circle">❮</a>
-                                <a href="#car_slide4" className="btn btn-circle">❯</a>
-                            </div>
-                        </div>
-                        <div id="car_slide4" className="carousel-item relative w-full">
-                            <img src={people02} alt='Drawing 4' className="w-full" />
-                            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                                <a href="#car_slide3" className="btn btn-circle">❮</a>
-                                <a href="#car_slide1" className="btn btn-circle">❯</a>
-                            </div>
+                        <div className="flex flex-col items-center bg-primary-content p-6 rounded-lg shadow-md">
+                            <h3 className="text-xl font-semibold mb-4 font-handwriting">Creative Coding</h3>
+                            <p className="text-lg text-center opacity-90">Exploring creative coding through JavaScript, C#, and p5.js to create engaging interactive projects and visualizations.</p>
                         </div>
                     </div>
                 </div>
 
-                {/* Photography Section */}
-                <div className="flex flex-col gap-6 mt-8">
-                    <div className="flex items-center gap-3">
-                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="Camera">
-                            <path id="Camera_2" d="M12.25 0H8.75V3.88889H0V35H35V3.88889H26.25V0H12.25ZM26.25 7.77778H31.5V31.1111H3.5V7.77778H12.25V3.88889H22.75V7.77778H26.25ZM14 11.6667H21V15.5556H14V11.6667ZM21 23.3333H14V27.2222H21V23.3333H24.5V15.5556H21V23.3333ZM10.5 15.5556H14V23.3333H10.5V15.5556Z" fill="#7D9AA1"/>
-                        </g>
-                    </svg>
-                        <div className="text-secondary-content text-xl sm:text-2xl lg:text-3xl font-normal font-handwriting">
-                            <h2>Photography</h2>
-                        </div>
-                    </div>
-                    <div className="text-black text-base sm:text-lg lg:text-xl font-normal font-mono">
-                        <p>I have a passion for photography and enjoy capturing a variety of subjects, especially nature and animals. I love going on hikes with my camera, taking the opportunity to snap a few shots along the way.</p>
-                    </div>
-                    <div>
-                        <Link to={`https://www.instagram.com/chloe.dwyer_photography/profilecard/?igsh=ZmVhbmN4YyP9g`}>
-                            <button className="btn btn-primary btn-lg no-animation text-accent">View My Instagram</button>
-                        </Link>
+                {/* Interests Section */}
+                <div>
+                    <div className="text-primary text-3xl sm:text-4xl lg:text-5xl font-normal font-handwriting text-center">
+                        <h1>Some of my Interests</h1>
                     </div>
 
-                    {/* Photography Carousel */}
-                    <div className="carousel w-full">
-                        <div id="photo_slide1" className="carousel-item relative w-full">
-                            <img src={photo01} alt='01' className="w-full" />
-                            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                                <a href="#photo_slide4" className="btn btn-circle">❮</a>
-                                <a href="#photo_slide2" className="btn btn-circle">❯</a>
+                    {/* Art and Drawing */}
+                    <div className="flex flex-col gap-6 mt-8">
+                        <div className="flex flex-col lg:flex-row items-center gap-16 mb-20">
+                            <div className="lg:w-1/2">
+                                <h3 className="text-2xl sm:text-3xl lg:text-4xl text-secondary-content mb-4 font-handwriting">Art & Drawing</h3>
+                                <p className="text-lg sm:text-xl text-black mb-6">
+                                    Art is my personal outlet and passion. I create custom illustrations of people, pets, and cars. It's been a rewarding journey, and I still love taking on occasional projects.
+                                </p>
+                                <Link to="https://www.instagram.com/designsbyclo_/">
+                                    <button className="btn btn-primary btn-md no-animation text-accent">View My Instagram</button>
+                                </Link>
+                            </div>
+
+                            <div className="lg:w-1/2">
+                                <div className="carousel w-full">
+                                    <div id="car_slide1" className="carousel-item relative w-full">
+                                        <img src={car01} alt="Car Illustration 1" className="w-full rounded-lg" />
+                                        <div className="absolute top-1/2 left-5 right-5 flex justify-between transform -translate-y-1/2">
+                                            <a href="#car_slide4" className="btn btn-circle text-white">
+                                                ❮
+                                            </a>
+                                            <a href="#car_slide2" className="btn btn-circle text-white">
+                                                ❯
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="car_slide2" className="carousel-item relative w-full">
+                                        <img src={people01} alt="Drawing 2" className="w-full rounded-lg" />
+                                        <div className="absolute top-1/2 left-5 right-5 flex justify-between transform -translate-y-1/2">
+                                            <a href="#car_slide1" className="btn btn-circle text-white">
+                                                ❮
+                                            </a>
+                                            <a href="#car_slide3" className="btn btn-circle text-white">
+                                                ❯
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="car_slide3" className="carousel-item relative w-full">
+                                        <img src={car04} alt="Drawing 3" className="w-full rounded-lg" />
+                                        <div className="absolute top-1/2 left-5 right-5 flex justify-between transform -translate-y-1/2">
+                                            <a href="#car_slide2" className="btn btn-circle text-white">
+                                                ❮
+                                            </a>
+                                            <a href="#car_slide4" className="btn btn-circle text-white">
+                                                ❯
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="car_slide4" className="carousel-item relative w-full">
+                                        <img src={people02} alt="Drawing 4" className="w-full rounded-lg" />
+                                        <div className="absolute top-1/2 left-5 right-5 flex justify-between transform -translate-y-1/2">
+                                            <a href="#car_slide3" className="btn btn-circle text-white">
+                                                ❮
+                                            </a>
+                                            <a href="#car_slide1" className="btn btn-circle text-white">
+                                                ❯
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div id="photo_slide2" className="carousel-item relative w-full">
-                            <img src={photo02} alt='02' className="w-full" />
-                            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                                <a href="#photo_slide1" className="btn btn-circle">❮</a>
-                                <a href="#photo_slide3" className="btn btn-circle">❯</a>
+                    </div>
+
+                    {/* Photography Section */}
+                    <div className="flex flex-col gap-6 mt-8">
+                        <div className="flex flex-col lg:flex-row items-center gap-16 mb-20">
+                            <div className="lg:w-1/2">
+                                <h3 className="text-2xl sm:text-3xl lg:text-4xl text-secondary-content mb-4 font-handwriting">Photography</h3>
+                                <p className="text-lg sm:text-xl text-black mb-6">
+                                    I capture moments through my lens, exploring landscapes, portraits, and events. My photography journey allows me to connect with others while showcasing my perspective.
+                                </p>
+                                <Link to="https://www.instagram.com/chloe.dwyer_photography/">
+                                    <button className="btn btn-primary btn-md no-animation text-accent">View My Instagram</button>
+                                </Link>
                             </div>
-                        </div>
-                        <div id="photo_slide3" className="carousel-item relative w-full">
-                            <img src={photo03} alt='03' className="w-full" />
-                            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                                <a href="#photo_slide2" className="btn btn-circle">❮</a>
-                                <a href="#photo_slide4" className="btn btn-circle">❯</a>
-                            </div>
-                        </div>
-                        <div id="photo_slide4" className="carousel-item relative w-full">
-                            <img src={photo04} alt='04' className="w-full" />
-                            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                                <a href="#photo_slide3" className="btn btn-circle">❮</a>
-                                <a href="#photo_slide1" className="btn btn-circle">❯</a>
+
+                            <div className="lg:w-1/2">
+                                <div className="carousel w-full">
+                                    <div id="photo_slide1" className="carousel-item relative w-full">
+                                        <img src={photo01} alt="Car Illustration 1" className="w-full rounded-lg" />
+                                        <div className="absolute top-1/2 left-5 right-5 flex justify-between transform -translate-y-1/2">
+                                            <a href="#photo_slide4" className="btn btn-circle text-white">
+                                                ❮
+                                            </a>
+                                            <a href="#photo_slide2" className="btn btn-circle text-white">
+                                                ❯
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="photo_slide2" className="carousel-item relative w-full">
+                                        <img src={photo02} alt="Drawing 2" className="w-full rounded-lg" />
+                                        <div className="absolute top-1/2 left-5 right-5 flex justify-between transform -translate-y-1/2">
+                                            <a href="#photo_slide1" className="btn btn-circle text-white">
+                                                ❮
+                                            </a>
+                                            <a href="#photo_slide3" className="btn btn-circle text-white">
+                                                ❯
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="photo_slide3" className="carousel-item relative w-full">
+                                        <img src={photo03} alt="Drawing 3" className="w-full rounded-lg" />
+                                        <div className="absolute top-1/2 left-5 right-5 flex justify-between transform -translate-y-1/2">
+                                            <a href="#photo_slide2" className="btn btn-circle text-white">
+                                                ❮
+                                            </a>
+                                            <a href="#photo_slide4" className="btn btn-circle text-white">
+                                                ❯
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="photo_slide4" className="carousel-item relative w-full">
+                                        <img src={photo04} alt="Drawing 4" className="w-full rounded-lg" />
+                                        <div className="absolute top-1/2 left-5 right-5 flex justify-between transform -translate-y-1/2">
+                                            <a href="#photo_slide3" className="btn btn-circle text-white">
+                                                ❮
+                                            </a>
+                                            <a href="#photo_slide1" className="btn btn-circle text-white">
+                                                ❯
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
-        </>
     );
-}
+};
 
 export default About;
