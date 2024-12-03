@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import image1 from '../images/thumbnail_image0.png';
 
 const Navbar = () => {
     return (
@@ -8,7 +9,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className="w-12 h-12 rounded-full overflow-hidden">
                     <img
-                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                        src={image1}
                         alt="Logo"
                         className="w-full h-full object-cover"
                     />

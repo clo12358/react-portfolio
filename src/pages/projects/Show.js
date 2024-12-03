@@ -22,15 +22,15 @@ const Show = () => {
   return (
     <>
       {/* Project Information Section */}
-      <div className="h-auto px-4 py-6 sm:px-8 sm:py-10 bg-[#fafaf7] flex justify-center items-center">
+      <div className="h-auto px-4 py-6 sm:px-8 sm:py-10 bg-accent flex justify-center items-center">
         <div className="w-full max-w-5xl flex flex-col gap-6 sm:gap-8">
           {/* Title and Category Section */}
           <div className="text-center sm:text-left">
-            <div className="text-[#abdbae] text-[30px] sm:text-[40px] md:text-[50px] font-semibold font-['Aleo']">
+            <div className="text-primary text-[30px] sm:text-[40px] md:text-[50px] font-semibold font-handwriting">
               {project.title}
             </div>
-            <div className="mt-2 sm:mt-4 px-4 py-2 bg-[#7d9aa1] rounded-[3px] inline-flex justify-center items-center">
-              <div className="text-[#fafaf7] text-[16px] sm:text-[18px] font-semibold font-['Aleo']">
+            <div className="mt-2 sm:mt-4 px-4 py-2 bg-secondary-content rounded-[3px] inline-flex justify-center items-center">
+              <div className="text-accent text-[16px] sm:text-[18px] font-semibold">
                 {project.categories}
               </div>
             </div>
@@ -39,7 +39,7 @@ const Show = () => {
           {/* Description and Technologies Section */}
           <div className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-12">
             {/* Description */}
-            <div className="text-[#292925] text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-normal font-['Aleo'] flex-1">
+            <div className="text-black text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-normal flex-1">
               {project.description}
             </div>
 
@@ -49,9 +49,9 @@ const Show = () => {
                 {project.technologies.map((tech, index) => (
                   <div
                     key={index}
-                    className="px-4 py-2 bg-[#83a886] rounded-[3px] flex items-center justify-center"
+                    className="px-4 py-2 bg-primary-content rounded-[3px] flex items-center justify-center"
                   >
-                    <div className="text-[#fafaf7] text-[14px] sm:text-[16px] font-semibold font-['Aleo']">
+                    <div className="text-accent text-[14px] sm:text-[16px] font-semibold font-handwriting">
                       {tech}
                     </div>
                   </div>
@@ -61,8 +61,8 @@ const Show = () => {
               {/* Links Section */}
               <div className="flex flex-col gap-4 mt-6">
                 <div className="flex items-center gap-3">
-                  <div className="text-[#292925] text-[14px] sm:text-[16px] font-normal font-['Aleo']">
-                    <a href={project.gitHub} className="hover:text-[#abdbae]">
+                  <div className="text-black text-[14px] sm:text-[16px] font-normal">
+                    <a href={project.gitHub} className="hover:text-primary">
                       {project.gitHub}
                     </a>
                   </div>
@@ -78,7 +78,7 @@ const Show = () => {
                   </div>
                 </div> */}
                 <div className="flex items-center gap-3">
-                  <div className="text-[#292925] text-[14px] sm:text-[16px] font-normal font-['Aleo']">
+                  <div className="text-black text-[14px] sm:text-[16px] font-normal">
                     {project.date}
                   </div>
                 </div>
