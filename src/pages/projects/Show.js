@@ -90,8 +90,11 @@ const Show = () => {
 
       {/* Images Section */}
       <div className="h-auto sm:h-[800px] px-4 sm:px-8 pt-8 pb-6 bg-[#fafaf7] flex justify-center items-center flex-col sm:flex-row gap-6 sm:gap-12">
-        <div className="w-full sm:w-[48%] h-[300px] sm:h-[500px] bg-[#d9d9d9] rounded-md" />
-        <div className="w-full sm:w-[48%] h-[300px] sm:h-[500px] bg-[#d9d9d9] rounded-md" />
+      <img
+            src={project.images.url}
+            alt={project.images.caption}
+            className="w-full sm:w-[48%] h-[300px] sm:h-[500px] rounded-md"
+          />
       </div>
     </>
   );

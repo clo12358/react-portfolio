@@ -14,7 +14,7 @@ const Home = () => {
         className="flex flex-col sm:flex-row bg-white rounded-3xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out p-4 sm:p-6 gap-4 sm:gap-8"
       >
         {/* Image Section */}
-        <div className="w-full sm:w-[50%] h-[150px] sm:h-[200px] bg-[#e0e0e0] rounded-2xl overflow-hidden">
+        <div className="w-full sm:w-[50%] h-full bg-[#e0e0e0] rounded-2xl overflow-hidden flex-shrink-0">
           <img
             src={project.image}
             alt={project.title}
@@ -31,7 +31,9 @@ const Home = () => {
 
           {/* Description */}
           <div className="text-gray-700 text-sm sm:text-base text-center sm:text-left">
-            {project.description}
+            {project.description.length > 100
+              ? `${project.description.substring(0, 100)}...`
+              : project.description}
           </div>
 
           {/* Button */}
