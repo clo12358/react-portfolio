@@ -8,19 +8,19 @@
         "images": [
             {
                 "caption": "Screenshot 1",
-                "url": "../images/Rest1.JPG"
+                "url": "Rest1.JPG"
             },
             {
                 "caption": "Screenshot 2",
-                "url": "../images/Rest2.JPG"
+                "url": "Rest2.JPG"
             },
             {
                 "caption": "Screenshot 3",
-                "url": "../images/Rest3.JPG"
+                "url": "Rest3.JPG"
             },
             {
                 "caption": "Screenshot 4",
-                "url": "../images/Rest4.JPG"
+                "url": "Rest4.JPG"
             }
         ],
         "links": [
@@ -33,31 +33,27 @@
         "gitHub": "https://github.com/clo12358/rest-countries"
     },
     {
-        "slug": "react-portfolio",
-        "title": "Portfolio",
-        "description" : "I was assigned to make a portfolio to tell employers about me and to show somem of my projcets I have created",
+        "slug": "greenville-app",
+        "title": "Greenville Deli",
+        "description" : "I was assigned to make a React Application that allows users to view data about countries around the world. I had to use the REST API: https://restcountries.com. I had to use Insomnia to test API HTTP endpoints. I used Bootstrap for my UI. I had to add another API so I decided to add in a Google Maps API so when you click on a country it shows where it is situated.",
         "categories": ["Front-End Development"],
-        "technologies": ["React.js", "Tailwind", "Daisy UI"],
+        "technologies": ["Bootstrap CSS", "HTML", "JavaScript"],
         "images": [
             {
                 "caption": "Screenshot 1",
-                "url": "../images/image0.jpeg"
+                "url": "Rest1.JPG"
             },
             {
                 "caption": "Screenshot 2",
-                "url": "../images/image1.jpeg"
+                "url": "Rest2.JPG"
             },
             {
                 "caption": "Screenshot 3",
-                "url": "../images/image2.jpeg"
+                "url": "Rest3.JPG"
             },
             {
                 "caption": "Screenshot 4",
-                "url": "../images/image3.jpeg"
-            },
-            {
-                "caption": "Screenshot 4",
-                "url": "../images/image4.jpeg"
+                "url": "Rest4.JPG"
             }
         ],
         "links": [
@@ -66,7 +62,7 @@
                 "url": "https://react-todo-app.web.app"
             }
         ],
-        "date": "December 2024",
-        "gitHub": "https://github.com/clo12358/ca2-doctors-api"
+        "date": "November 2024",
+        "gitHub": "https://github.com/clo12358/rest-countries"
     }
 ]
