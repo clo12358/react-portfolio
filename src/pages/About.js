@@ -22,6 +22,10 @@ import sketch04 from "../images/sketch4.png";
 import sketch05 from "../images/sketch5.png";
 import sketch06 from "../images/sketch6.png";
 import sketch07 from "../images/sketch7.png";
+import sketch08 from "../images/sketch8.png";
+import sketch09 from "../images/sketch9.png";
+import sketch10 from "../images/sketch10.png";
+import sketch11 from "../images/sketch11.png";
 
 const About = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -43,49 +47,54 @@ const About = () => {
 
   const funFacts = [
     {
-      title: "Cat Co-Worker",
-      text: "Pixel, my cat, sometimes sits on my keyboard mid-project 😸",
-      emoji: "🐱",
-      bg: "bg-yellow-200",
+      title: "Animal Lover",
+      text: "I have a dog named Archie and he’s my best buddy",
+      emoji: "🐶",
+      bg: "rgba(253, 230, 138, 0.8)",
       rotation: "rotate-2",
     },
     {
       title: "Coffee Alchemist",
       text: "I can't start the day without creating the perfect latte ☕",
       emoji: "☕",
-      bg: "bg-red-200",
+      bg: "rgba(254, 202, 202, 0.8)",
       rotation: "-rotate-1",
     },
     {
       title: "Sketch Everywhere",
       text: "You might find napkin sketches or doodles on sticky notes everywhere ✏️",
       emoji: "✏️",
-      bg: "bg-blue-200",
+      bg: "rgba(191, 219, 254, 0.8)",
       rotation: "rotate-1",
     },
     {
       title: "Music Addict",
       text: "I have playlists for coding, relaxing, and even for making coffee 🎶",
       emoji: "🎶",
-      bg: "bg-green-200",
+      bg: "rgba(187, 247, 208, 0.8)",
       rotation: "-rotate-2",
     },
   ];
 
-  const scatteredSketches = [
-    // Top row sketches
-    { src: sketch01, top: "-80px", left: "5%", w: "w-32", rotate: "rotate-12" },
-    { src: sketch02, top: "-60px", left: "35%", w: "w-16", rotate: "-rotate-6" },
-    { src: sketch03, top: "-90px", right: "10%", w: "w-28", rotate: "rotate-[-15deg]" },
-    
-    // Side sketches
-    { src: sketch04, top: "20%", left: "-80px", w: "w-24", rotate: "rotate-[8deg]" },
-    { src: sketch05, top: "40%", right: "-70px", w: "w-20", rotate: "-rotate-12" },
-    
-    // Bottom row sketches
-    { src: sketch06, bottom: "-70px", left: "15%", w: "w-36", rotate: "-rotate-6" },
-    { src: sketch07, bottom: "-50px", right: "25%", w: "w-16", rotate: "rotate-[20deg]" },
-  ];
+const scatteredSketches = [
+  // Top
+  { src: sketch01, position: "top-[-80px] left-[5%]", size: "w-20 sm:w-24", rotate: "rotate-[10deg]" },
+  { src: sketch02, position: "top-[-100px] right-[15%]", size: "w-24 sm:w-28", rotate: "-rotate-12" },
+  { src: sketch03, position: "top-[-60px] left-[40%]", size: "w-20 sm:w-24", rotate: "rotate-[5deg]" },
+
+  // Sides
+  { src: sketch04, position: "top-[20%] left-[-70px]", size: "w-24 sm:w-28", rotate: "rotate-[7deg]" },
+  { src: sketch05, position: "top-[35%] right-[-80px]", size: "w-20 sm:w-24", rotate: "-rotate-8" },
+  { src: sketch06, position: "top-[55%] left-[-60px]", size: "w-24 sm:w-28", rotate: "rotate-[12deg]" },
+  { src: sketch07, position: "top-[60%] right-[-70px]", size: "w-20 sm:w-24", rotate: "-rotate-10" },
+
+  // Bottom
+  { src: sketch08, position: "bottom-[-60px] left-[10%]", size: "w-24 sm:w-28", rotate: "rotate-[6deg]" },
+  { src: sketch09, position: "bottom-[-80px] right-[20%]", size: "w-20 sm:w-24", rotate: "-rotate-6" },
+  { src: sketch10, position: "bottom-[-90px] left-[50%]", size: "w-24 sm:w-28", rotate: "rotate-[8deg]" },
+  { src: sketch11, position: "bottom-[-100px] right-[50%]", size: "w-20 sm:w-24", rotate: "-rotate-5" },
+];
+
 
   const handleImageClick = (img) => {
     setSelectedImage(img);
@@ -99,7 +108,7 @@ const About = () => {
 
   return (
     <div className="flex flex-col items-center w-full">
-      {/* Top Hero Gradient Section */}
+      {/* Top Hero Section */}
       <div className="w-full bg-gradient-to-br from-primary via-accent to-secondary py-24 px-6 sm:px-12 md:px-20 flex flex-col items-center gap-16">
         <div className="text-center">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-handwriting text-[#637c82] drop-shadow-md">
@@ -135,7 +144,6 @@ const About = () => {
           </p>
         </div>
 
-        {/* Bigger Skills Cards */}
         <div className="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="flex flex-col items-center bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 hover:scale-105">
             <h3 className="text-2xl font-handwriting text-[#637c82] mb-2">Design & UX</h3>
@@ -163,7 +171,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Tools Cards */}
         <div className="max-w-6xl w-full grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6 mt-8">
           {tools.map((tool, i) => (
             <div
@@ -176,52 +183,59 @@ const About = () => {
         </div>
       </div>
 
-      {/* Fun Facts / Quirky Section */}
-      <div className="w-full py-24 px-6 sm:px-12 md:px-20 flex flex-col items-center gap-12 relative">
+      {/* Fun Facts Section */}
+      <div className="w-full py-24 px-6 sm:px-12 md:px-20 flex flex-col items-center gap-12 relative bg-transparent">
         <div className="max-w-6xl w-full text-center">
-          <h2 className="text-4xl sm:text-5xl font-handwriting text-primary mb-4">
+          <h2 className="text-4xl sm:text-5xl font-handwriting text-[#637c82] mb-4">
             Fun & Quirky Facts About Me
           </h2>
-          <p className="text-white/90 text-lg sm:text-xl mb-8">
+          <p className="text-[#637c82] text-lg sm:text-xl mb-8">
             Here's a peek into some of the things that make me uniquely me!
           </p>
         </div>
 
-        {/* Container for cards and sketches with increased padding */}
-        <div className="max-w-6xl w-full relative px-20 py-16">
-          {/* Fun Facts Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="max-w-6xl w-full relative px-8 py-16 flex items-center justify-center">
+          {/* Fun Facts Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-20">
             {funFacts.map((fact, i) => (
               <div
                 key={i}
-                className={`flex flex-col items-center p-6 rounded-3xl shadow-md transition-transform duration-300 hover:scale-105 ${fact.bg} ${fact.rotation}`}
+                className={`flex flex-col items-center p-8 rounded-3xl shadow-lg backdrop-blur-sm 
+                  transition-all duration-300 hover:scale-105 hover:shadow-xl 
+                  ${fact.rotation} border border-white/20`}
+                style={{
+                  background: fact.bg,
+                  backdropFilter: "blur(8px)",
+                }}
               >
-                <div className="text-4xl mb-2">{fact.emoji}</div>
-                <h3 className="text-2xl font-handwriting text-white mb-2">{fact.title}</h3>
-                <p className="text-white/90 text-center">{fact.text}</p>
+                <div className="text-5xl mb-4">{fact.emoji}</div>
+                <h3 className="text-2xl font-handwriting text-[#4a5c61] mb-3">{fact.title}</h3>
+                <p className="text-[#4a5c61] text-center text-lg">{fact.text}</p>
               </div>
             ))}
           </div>
 
-          {/* Sketches scattered around */}
+          {/* Scattered Sketches */}
           {scatteredSketches.map((sketch, i) => (
             <img
               key={i}
               src={sketch.src}
               alt={`sketch-${i}`}
-              className={`absolute ${sketch.w} ${sketch.rotate} transition-transform duration-300 hover:scale-110`}
-              style={{
-                top: sketch.top || 'auto',
-                bottom: sketch.bottom || 'auto',
-                left: sketch.left || 'auto',
-                right: sketch.right || 'auto'
-              }}
+              className={`
+                absolute ${sketch.position} ${sketch.size} ${sketch.rotate} 
+                transition-all duration-700 ease-out
+                hover:scale-110 hover:rotate-0
+                opacity-90 hover:opacity-100
+                filter drop-shadow-md
+                cursor-pointer
+                z-10
+              `}
             />
           ))}
         </div>
       </div>
 
-      {/* Art & Drawing */}
+      {/* Art & Drawing Section */}
       <div className="w-full py-16 px-6 sm:px-12 md:px-20 flex flex-col items-center gap-6">
         <h3 className="text-3xl sm:text-4xl lg:text-5xl font-handwriting text-[#637c82] mb-4 text-center">
           Art & Drawing
@@ -235,12 +249,11 @@ const About = () => {
           </button>
         </Link>
 
-        {/* Updated Art Gallery */}
         <div className="max-w-7xl w-full px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {artImages.map((img, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="group relative overflow-hidden rounded-3xl shadow-2xl aspect-[3/4] cursor-pointer"
                 onClick={() => handleImageClick(img)}
               >
@@ -262,7 +275,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* Photography */}
+      {/* Photography Section */}
       <div className="w-full py-16 px-6 sm:px-12 md:px-20 flex flex-col items-center gap-6 bg-white/10 backdrop-blur-md">
         <h3 className="text-3xl sm:text-4xl lg:text-5xl font-handwriting text-[#637c82] mb-4 text-center">
           Photography
@@ -276,12 +289,11 @@ const About = () => {
           </button>
         </Link>
 
-        {/* Updated Photography Gallery */}
         <div className="max-w-7xl w-full px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {photoImages.map((img, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="group relative overflow-hidden rounded-3xl shadow-2xl aspect-[4/5] cursor-pointer"
                 onClick={() => handleImageClick(img)}
               >
@@ -305,7 +317,7 @@ const About = () => {
 
       {/* Image Modal */}
       {isModalOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
           onClick={handleCloseModal}
         >
