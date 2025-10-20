@@ -7,10 +7,9 @@ const Home = () => {
   const navigate = useNavigate();
   const [projectsList] = useState(projectsJSON);
 
-  // DRAG STATE
   const heroRef = useRef(null);
-  const [positionPercent, setPositionPercent] = useState({ x: 50, y: 50 }); // for scaling
-  const [dragPos, setDragPos] = useState({ x: 0, y: 0 }); // pixel position while dragging
+  const [positionPercent, setPositionPercent] = useState({ x: 50, y: 50 });
+  const [dragPos, setDragPos] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
@@ -25,7 +24,6 @@ const Home = () => {
       const initialY = (heroRect.height - windowRect.height) / 2;
 
       setDragPos({ x: initialX, y: initialY });
-
       setPositionPercent({
         x: (initialX / heroRect.width) * 100,
         y: (initialY / heroRect.height) * 100,
@@ -33,7 +31,7 @@ const Home = () => {
     }
   }, []);
 
-  // Mouse down on header buttons area
+  // Mouse events
   const handleMouseDown = (e) => {
     e.preventDefault();
     const heroRect = heroRef.current.getBoundingClientRect();
@@ -45,7 +43,6 @@ const Home = () => {
       x: e.clientX - left,
       y: e.clientY - top,
     });
-
     setDragPos({ x: left, y: top });
 
     document.body.style.userSelect = "none";
@@ -54,7 +51,6 @@ const Home = () => {
 
   const handleMouseMove = (e) => {
     if (!dragging) return;
-
     const heroRect = heroRef.current.getBoundingClientRect();
     const windowEl = heroRef.current.querySelector(".mockup-window");
     const windowWidth = windowEl.offsetWidth;
@@ -63,7 +59,7 @@ const Home = () => {
     let newX = e.clientX - offset.x;
     let newY = e.clientY - offset.y;
 
-    // Constrain within hero
+    // keep within boundaries
     newX = Math.max(0, Math.min(newX, heroRect.width - windowWidth));
     newY = Math.max(0, Math.min(newY, heroRect.height - windowHeight));
 
@@ -73,7 +69,6 @@ const Home = () => {
   const handleMouseUp = () => {
     if (dragging) {
       const heroRect = heroRef.current.getBoundingClientRect();
-      // Convert final dragPos to percentages
       setPositionPercent({
         x: (dragPos.x / heroRect.width) * 100,
         y: (dragPos.y / heroRect.height) * 100,
@@ -98,15 +93,20 @@ const Home = () => {
       {/* HERO SECTION */}
       <section
         ref={heroRef}
-        className="min-h-screen bg-gradient-to-br from-primary via-accent to-secondary px-6 sm:px-12 md:px-20 py-16 flex justify-center items-center relative"
+        className="min-h-screen bg-gradient-to-br from-primary via-accent to-secondary px-6 sm:px-12 md:px-20 py-16 flex justify-center items-center relative overflow-hidden"
       >
         <div
-          className="mockup-window bg-base-100 max-w-6xl w-4/5 md:w-3/4 rounded-3xl shadow-md hover:shadow-xl transition-all duration-500 relative overflow-hidden"
+          className="mockup-window bg-base-100 rounded-3xl shadow-md hover:shadow-xl transition-all duration-500 relative overflow-hidden"
           style={{
             position: "absolute",
-            left: dragging ? `${dragPos.x}px` : `${positionPercent.x}%`,
-            top: dragging ? `${dragPos.y}px` : `${positionPercent.y}%`,
-            transform: "translate(0, 0)",
+            left: dragging ? `${dragPos.x}px` : "50%",
+            top: dragging ? `${dragPos.y}px` : "50%",
+            transform: dragging ? "none" : "translate(-50%, -50%)",
+            width: "80vw",
+            maxWidth: "1000px",
+            height: "70vh",
+            maxHeight: "700px",
+            minHeight: "400px",
           }}
         >
           {/* Mac Header Bar */}
@@ -121,29 +121,26 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-16 p-10 md:p-16 bg-base-200 rounded-b-3xl">
-            {/* Image Section */}
+          {/* Inner Content */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10 p-8 md:p-12 bg-base-200 rounded-b-3xl h-full overflow-y-auto">
             <div className="relative w-full flex justify-center order-1 md:order-2 animate-fade-in">
               <div className="absolute -inset-4 bg-white/20 blur-3xl rounded-3xl"></div>
               <img
                 src={image01}
                 alt="Chloe"
-                className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] rounded-3xl object-cover shadow-2xl border-4 border-white/50 transform transition-transform duration-500 hover:scale-105"
+                className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] rounded-3xl object-cover shadow-2xl border-4 border-white/50 transform transition-transform duration-500 hover:scale-105"
               />
             </div>
 
-            {/* Text Section */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6 md:w-1/2 order-2 md:order-1 animate-fade-in-delay">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-handwriting text-primary drop-shadow-md">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-handwriting text-primary drop-shadow-md">
                 Hey, I'm Chloe
               </h1>
-
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 font-light leading-relaxed max-w-md">
-                A fourth-year <span className="font-semibold">Creative Computing</span> student at IADT with a passion for turning{" "}
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 font-light leading-relaxed max-w-md">
+                A fourth-year <span className="font-semibold text-secondary">Creative Computing</span> student at IADT with a passion for turning{" "}
                 <span className="italic">design</span> ideas into{" "}
                 <span className="italic">interactive experiences</span>.
               </p>
-
               <button
                 className="mt-4 bg-primary text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:shadow-2xl hover:bg-accent transition-all duration-300"
                 onClick={() => navigate("/about")}
@@ -173,7 +170,6 @@ const Home = () => {
               key={index}
               className="mockup-window bg-base-100 overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500"
             >
-              {/* Mac Header Bar */}
               <div className="flex items-center h-8 px-4 bg-base-200 rounded-t-2xl">
                 <div className="flex space-x-2">
                   <span className="mockup-btn-red w-3 h-3 rounded-full hover:bg-[#ff7b70] transition-colors duration-300"></span>
