@@ -35,25 +35,25 @@
     {
         "slug": "greenville-app",
         "title": "Greenville Deli",
-        "description" : "I was assigned to make a React Application that allows users to view data about countries around the world. I had to use the REST API: https://restcountries.com. I had to use Insomnia to test API HTTP endpoints. I used Bootstrap for my UI. I had to add another API so I decided to add in a Google Maps API so when you click on a country it shows where it is situated.",
+        "description" : "I was asigned to re-deisgn a website for a local deli in Greenville, SC. I used Bootstrap CSS to make the website responsive and mobile friendly. I had to make sure the website was easy to navigate and visually appealing. I also had to make sure the website was optimized for search engines.",
         "categories": ["Front-End Development"],
         "technologies": ["Bootstrap CSS", "HTML", "JavaScript"],
         "images": [
             {
                 "caption": "Screenshot 1",
-                "url": "Rest1.JPG"
+                "url": "Greenville1.png"
             },
             {
                 "caption": "Screenshot 2",
-                "url": "Rest2.JPG"
+                "url": "Greenville.png"
             },
             {
                 "caption": "Screenshot 3",
-                "url": "Rest3.JPG"
+                "url": "Greenville3.png"
             },
             {
                 "caption": "Screenshot 4",
-                "url": "Rest4.JPG"
+                "url": "Greenville4.png"
             }
         ],
         "links": [
@@ -62,7 +62,40 @@
                 "url": "https://react-todo-app.web.app"
             }
         ],
-        "date": "November 2024",
-        "gitHub": "https://github.com/clo12358/rest-countries"
+        "date": "December 2023",
+        "gitHub": "https://github.com/clo12358/my_sass_project"
+    },
+    {
+        "slug": "salon-dashboard",
+        "title": "Salon Dashboard",
+        "description" : "I was asigned to re-deisgn a website for a local deli in Greenville, SC. I used Bootstrap CSS to make the website responsive and mobile friendly. I had to make sure the website was easy to navigate and visually appealing. I also had to make sure the website was optimized for search engines.",
+        "categories": ["Front-End Development"],
+        "technologies": ["React,js", "Tailwind CSS", "JavaScript", "Firebase Database"],
+        "images": [
+            {
+                "caption": "Screenshot 1",
+                "url": "Dashboard1.png"
+            },
+            {
+                "caption": "Screenshot 2",
+                "url": "Dashboard2.png"
+            },
+            {
+                "caption": "Screenshot 3",
+                "url": "Dashboard3.png"
+            },
+            {
+                "caption": "Screenshot 4",
+                "url": "Dashboard4.png"
+            }
+        ],
+        "links": [
+            {
+                "title": "Website",
+                "url": "https://react-todo-app.web.app"
+            }
+        ],
+        "date": "October 2025",
+        "gitHub": "https://github.com/clo12358/hairdresser-dashboard"
     }
 ]

@@ -10,9 +10,8 @@ const Home = () => {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="min-h-[80vh] bg-gradient-to-br from-primary via-accent to-secondary relative overflow-hidden flex items-center justify-center">
-        {/* Content */}
-        <div className="relative max-w-6xl mx-auto px-6 sm:px-12 md:px-16 py-12 flex flex-col md:flex-row items-center justify-center gap-12 z-10">
+      <section className="bg-gradient-to-br from-primary via-accent to-secondary relative overflow-hidden flex items-center justify-center py-24">
+        <div className="max-w-7xl w-full mx-auto px-6 sm:px-12 md:px-16 flex flex-col md:flex-row items-center justify-center gap-12">
           {/* Text content */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6 md:w-1/2 animate-fade-in">
             <h1 className="text-6xl sm:text-7xl md:text-8xl font-handwriting text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)] leading-tight">
@@ -21,10 +20,7 @@ const Home = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-handwriting text-white font-medium drop-shadow-[0_2px_2px_rgba(0,0,0,0.25)]">
               Designer & Developer
             </h2>
-            <p
-              className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed max-w-lg 
-                tracking-wide font-normal drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)]"
-            >
+            <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed max-w-lg tracking-wide font-normal drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)]">
               A fourth-year{" "}
               <span className="font-semibold text-white">
                 Creative Computing
@@ -33,20 +29,6 @@ const Home = () => {
               <span className="font-semibold">design</span> ideas into{" "}
               <span className="font-semibold">interactive experiences</span>.
             </p>
-            <div className="flex gap-6 mt-4">
-              <button
-                onClick={() => navigate("/about")}
-                className="bg-white text-primary font-semibold px-10 py-4 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg sm:text-xl"
-              >
-                About Me
-              </button>
-              <button
-                onClick={() => navigate("/projects")}
-                className="bg-transparent text-white font-semibold px-10 py-4 rounded-xl border-2 border-white/50 hover:bg-white/10 transition-all duration-300 text-lg sm:text-xl"
-              >
-                View Work
-              </button>
-            </div>
           </div>
 
           {/* Image content */}
@@ -64,12 +46,50 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ABOUT PREVIEW SECTION */}
+      <section className="relative bg-gradient-to-br from-[#f8faf9] via-[#e8f0ed] to-[#fafaf7] py-28 px-6 sm:px-12 md:px-20 overflow-hidden">
+        {/* Decorative floating shapes */}
+        <div className="absolute top-10 left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-10 right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float-slow-reverse"></div>
+
+        <div className="relative max-w-5xl mx-auto text-center">
+          {/* Title */}
+          <h2 className="text-[#637c82] text-5xl sm:text-6xl font-handwriting mb-10 drop-shadow-md">
+            A Little About Me
+          </h2>
+
+          {/* Card Container */}
+          <div className="bg-white/60 backdrop-blur-xl border border-white/50 rounded-3xl shadow-xl hover:shadow-2xl p-10 sm:p-14 transition-all duration-500 transform hover:scale-[1.01]">
+            <p className="text-[#637c82] text-lg sm:text-xl leading-relaxed opacity-90 max-w-3xl mx-auto mb-12">
+              I’m a designer and developer with a passion for crafting
+              meaningful digital experiences that seamlessly merge{" "}
+              <span className="font-semibold text-[#4f6165]">creativity</span>{" "}
+              and{" "}
+              <span className="font-semibold text-[#4f6165]">
+                functionality
+              </span>
+              . I love bringing ideas to life through thoughtful design and
+              interactive development — from engaging{" "}
+              <span className="font-semibold">web applications</span> to
+              immersive <span className="font-semibold">prototypes</span>.
+            </p>
+
+            {/* Button */}
+            <button
+              onClick={() => navigate("/about")}
+              className="bg-[#637c82] text-white font-semibold px-10 py-4 rounded-xl shadow-md hover:bg-[#4f6165] hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* PROJECTS SECTION */}
       <section className="bg-base-200 px-6 sm:px-12 md:px-20 lg:px-32 py-24">
         <div className="bg-white max-w-7xl mx-auto shadow-2xl rounded-xl overflow-hidden">
           {/* Custom Window Header */}
           <div className="h-12 bg-[#f6f6f6] border-b border-[#e2e2e2] relative flex items-center px-4">
-            {/* Window Controls */}
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-[#ff5f57] shadow-sm hover:bg-[#ff4b47] transition-colors"></div>
               <div className="w-3 h-3 rounded-full bg-[#febc2e] shadow-sm hover:bg-[#feac14] transition-colors"></div>
@@ -97,11 +117,27 @@ const Home = () => {
                      transition-all duration-500 group"
                 >
                   <div className="relative">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-64 object-cover"
-                    />
+                    {/* 🖼️ Multiple Images Using Map */}
+                    {Array.isArray(project.images) &&
+                    project.images.length > 0 ? (
+                      <div className="grid grid-cols-2 gap-1">
+                        {project.images.slice(0, 4).map((image, imgIndex) => (
+                          <img
+                            key={imgIndex}
+                            src={`/images/${image.url}`}
+                            alt={image.caption || project.title}
+                            className="w-full h-32 object-cover"
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-64 object-cover"
+                      />
+                    )}
+
                     <div
                       className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 
                             transition-opacity duration-500 flex flex-col justify-center 

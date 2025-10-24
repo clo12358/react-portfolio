@@ -48,53 +48,107 @@ const About = () => {
   const funFacts = [
     {
       title: "Animal Lover",
-      text: "I have a dog named Archie and he’s my best buddy",
+      text: "I have a dog named Archie and he helps me with creative brainstorming.",
       emoji: "🐶",
       bg: "rgba(253, 230, 138, 0.8)",
       rotation: "rotate-2",
     },
     {
-      title: "Coffee Alchemist",
-      text: "I can't start the day without creating the perfect latte ☕",
-      emoji: "☕",
+      title: "Car Enthusiast",
+      text: "I enjoy spending weekends drawing cars and fixing up my project car.",
+      emoji: "🚗",
       bg: "rgba(254, 202, 202, 0.8)",
       rotation: "-rotate-1",
     },
     {
-      title: "Sketch Everywhere",
-      text: "You might find napkin sketches or doodles on sticky notes everywhere ✏️",
-      emoji: "✏️",
+      title: "Reading Fanatic",
+      text: "I got a Kindle and it might have been the worst idea ever — I can't stop buying books!",
+      emoji: "📚",
       bg: "rgba(191, 219, 254, 0.8)",
       rotation: "rotate-1",
     },
     {
-      title: "Music Addict",
-      text: "I have playlists for coding, relaxing, and even for making coffee 🎶",
-      emoji: "🎶",
+      title: "Outdoor Explorer",
+      text: "I enjoy hiking and nature walks to recharge and find inspiration.",
+      emoji: "🌲",
       bg: "rgba(187, 247, 208, 0.8)",
       rotation: "-rotate-2",
     },
   ];
 
-const scatteredSketches = [
-  // Top
-  { src: sketch01, position: "top-[-80px] left-[5%]", size: "w-20 sm:w-24", rotate: "rotate-[10deg]" },
-  { src: sketch02, position: "top-[-100px] right-[15%]", size: "w-24 sm:w-28", rotate: "-rotate-12" },
-  { src: sketch03, position: "top-[-60px] left-[40%]", size: "w-20 sm:w-24", rotate: "rotate-[5deg]" },
+  const scatteredSketches = [
+    // Top
+    {
+      src: sketch01,
+      position: "top-[-80px] left-[5%]",
+      size: "w-20 sm:w-24",
+      rotate: "rotate-[10deg]",
+    },
+    {
+      src: sketch02,
+      position: "top-[-100px] right-[15%]",
+      size: "w-24 sm:w-28",
+      rotate: "-rotate-12",
+    },
+    {
+      src: sketch03,
+      position: "top-[-60px] left-[40%]",
+      size: "w-20 sm:w-24",
+      rotate: "rotate-[5deg]",
+    },
 
-  // Sides
-  { src: sketch04, position: "top-[20%] left-[-70px]", size: "w-24 sm:w-28", rotate: "rotate-[7deg]" },
-  { src: sketch05, position: "top-[35%] right-[-80px]", size: "w-20 sm:w-24", rotate: "-rotate-8" },
-  { src: sketch06, position: "top-[55%] left-[-60px]", size: "w-24 sm:w-28", rotate: "rotate-[12deg]" },
-  { src: sketch07, position: "top-[60%] right-[-70px]", size: "w-20 sm:w-24", rotate: "-rotate-10" },
+    // Sides
+    {
+      src: sketch04,
+      position: "top-[20%] left-[-70px]",
+      size: "w-24 sm:w-28",
+      rotate: "rotate-[7deg]",
+    },
+    {
+      src: sketch05,
+      position: "top-[35%] right-[-80px]",
+      size: "w-20 sm:w-24",
+      rotate: "-rotate-8",
+    },
+    {
+      src: sketch06,
+      position: "top-[55%] left-[-60px]",
+      size: "w-24 sm:w-28",
+      rotate: "rotate-[12deg]",
+    },
+    {
+      src: sketch07,
+      position: "top-[60%] right-[-70px]",
+      size: "w-20 sm:w-24",
+      rotate: "-rotate-10",
+    },
 
-  // Bottom
-  { src: sketch08, position: "bottom-[-60px] left-[10%]", size: "w-24 sm:w-28", rotate: "rotate-[6deg]" },
-  { src: sketch09, position: "bottom-[-80px] right-[20%]", size: "w-20 sm:w-24", rotate: "-rotate-6" },
-  { src: sketch10, position: "bottom-[-90px] left-[50%]", size: "w-24 sm:w-28", rotate: "rotate-[8deg]" },
-  { src: sketch11, position: "bottom-[-100px] right-[50%]", size: "w-20 sm:w-24", rotate: "-rotate-5" },
-];
-
+    // Bottom
+    {
+      src: sketch08,
+      position: "bottom-[-60px] left-[10%]",
+      size: "w-24 sm:w-28",
+      rotate: "rotate-[6deg]",
+    },
+    {
+      src: sketch09,
+      position: "bottom-[-80px] right-[20%]",
+      size: "w-20 sm:w-24",
+      rotate: "-rotate-6",
+    },
+    {
+      src: sketch10,
+      position: "bottom-[-90px] left-[50%]",
+      size: "w-24 sm:w-28",
+      rotate: "rotate-[8deg]",
+    },
+    {
+      src: sketch11,
+      position: "bottom-[-100px] right-[50%]",
+      size: "w-20 sm:w-24",
+      rotate: "-rotate-5",
+    },
+  ];
 
   const handleImageClick = (img) => {
     setSelectedImage(img);
@@ -109,26 +163,55 @@ const scatteredSketches = [
   return (
     <div className="flex flex-col items-center w-full">
       {/* Top Hero Section */}
-      <div className="w-full bg-gradient-to-br from-primary via-accent to-secondary py-24 px-6 sm:px-12 md:px-20 flex flex-col items-center gap-16">
-        <div className="text-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-handwriting text-[#637c82] drop-shadow-md">
-            Hey, I'm Chloe Dwyer!
-          </h1>
-        </div>
+      <div className="relative w-full bg-gradient-to-br from-[#dce8e5] via-[#fafaf7] to-[#e8f0ed] py-28 px-6 sm:px-12 md:px-20 overflow-hidden">
+        {/* Background decor */}
+        <div className="absolute top-10 left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-10 right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float-slow-reverse"></div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-16 max-w-6xl w-full">
-          <div className="lg:w-1/2 text-[#637c82] text-lg sm:text-xl lg:text-2xl leading-relaxed">
-            <p>
-              I am passionate about UI/UX design and Front-End Development. I bring ideas to life through creative and functional solutions. Let's build something great together!
-            </p>
+        <div className="relative flex flex-col lg:flex-row items-center justify-center gap-16 max-w-7xl mx-auto z-10">
+          {/* Left: Text */}
+          <div className="lg:w-1/2 text-center lg:text-left text-[#637c82]">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-handwriting text-[#637c82] drop-shadow-md mb-6">
+              Hey, I'm <span className="text-[#4f6165]">Chloe Dwyer</span>!
+            </h1>
+
+            <div className="bg-white/60 backdrop-blur-md border border-white/50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+              <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed opacity-90">
+                I’m a designer and developer who brings creative ideas to life
+                through design and code. I love crafting meaningful digital
+                experiences that blend{" "}
+                <span className="font-semibold text-[#4f6165]">
+                  aesthetic appeal
+                </span>{" "}
+                with{" "}
+                <span className="font-semibold text-[#4f6165]">
+                  functional design
+                </span>
+                .
+              </p>
+            </div>
+
+            <Link to="/projects">
+              <button className="mt-8 bg-[#637c82] text-white font-semibold px-8 py-4 rounded-xl shadow-md hover:bg-[#4f6165] hover:shadow-xl hover:scale-105 transition-all duration-300">
+                View My Work
+              </button>
+            </Link>
           </div>
 
-          <div className="lg:w-1/2 relative rounded-3xl overflow-hidden shadow-2xl">
-            <img
-              src={image02}
-              alt="Chloe Dwyer"
-              className="w-full h-full object-cover transform transition-transform duration-500 hover:scale-105"
-            />
+          {/* Right: Polaroid-Style Image (using imported image) */}
+          <div className="lg:w-1/2 relative flex justify-center items-center">
+            <div className="relative w-80 sm:w-96 md:w-[26rem] transform transition-all duration-500 hover:scale-105 hover:-rotate-2 hover:shadow-2xl">
+              <div className="bg-white p-4 rounded-3xl shadow-2xl border border-[#e8f0ed]">
+                <img
+                  src={image02}
+                  alt="Chloe Dwyer"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+                <p className="text-[#637c82] font-handwriting text-xl mt-3 text-center opacity-90">
+                  “Design. Develop. Create.”
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -140,13 +223,16 @@ const scatteredSketches = [
             Skills & Tools
           </h2>
           <p className="text-[#637c82] opacity-90 text-lg sm:text-xl">
-            Here are some of the key skills and tools I use to bring ideas to life:
+            Here are some of the key skills and tools I use to bring ideas to
+            life:
           </p>
         </div>
 
         <div className="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="flex flex-col items-center bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 hover:scale-105">
-            <h3 className="text-2xl font-handwriting text-[#637c82] mb-2">Design & UX</h3>
+            <h3 className="text-2xl font-handwriting text-[#637c82] mb-2">
+              Design & UX
+            </h3>
             <ul className="text-[#637c82] opacity-90 text-center list-disc list-inside space-y-1">
               <li>Wireframing & Prototyping</li>
               <li>User Research & Personas</li>
@@ -155,7 +241,9 @@ const scatteredSketches = [
           </div>
 
           <div className="flex flex-col items-center bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 hover:scale-105">
-            <h3 className="text-2xl font-handwriting text-[#637c82] mb-2">Front-End</h3>
+            <h3 className="text-2xl font-handwriting text-[#637c82] mb-2">
+              Front-End
+            </h3>
             <ul className="text-[#637c82] opacity-90 text-center list-disc list-inside space-y-1">
               <li>React.js</li>
               <li>Tailwind CSS</li>
@@ -163,7 +251,9 @@ const scatteredSketches = [
           </div>
 
           <div className="flex flex-col items-center bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 hover:scale-105">
-            <h3 className="text-2xl font-handwriting text-[#637c82] mb-2">Soft Skills</h3>
+            <h3 className="text-2xl font-handwriting text-[#637c82] mb-2">
+              Soft Skills
+            </h3>
             <ul className="text-[#637c82] opacity-90 text-center list-disc list-inside space-y-1">
               <li>Collaboration & Teamwork</li>
               <li>Problem-Solving & Critical Thinking</li>
@@ -209,8 +299,12 @@ const scatteredSketches = [
                 }}
               >
                 <div className="text-5xl mb-4">{fact.emoji}</div>
-                <h3 className="text-2xl font-handwriting text-[#4a5c61] mb-3">{fact.title}</h3>
-                <p className="text-[#4a5c61] text-center text-lg">{fact.text}</p>
+                <h3 className="text-2xl font-handwriting text-[#4a5c61] mb-3">
+                  {fact.title}
+                </h3>
+                <p className="text-[#4a5c61] text-center text-lg">
+                  {fact.text}
+                </p>
               </div>
             ))}
           </div>
@@ -241,7 +335,9 @@ const scatteredSketches = [
           Art & Drawing
         </h3>
         <p className="text-[#637c82] text-lg sm:text-xl mb-8 text-center max-w-3xl">
-          Art is my personal outlet and passion. I create custom illustrations of people, pets, and cars. It's been a rewarding journey, and I still love taking on occasional projects.
+          Art is my personal outlet and passion. I create custom illustrations
+          of people, pets, and cars. It's been a rewarding journey, and I still
+          love taking on occasional projects.
         </p>
         <Link to="https://www.instagram.com/designsbyclo_/">
           <button className="bg-[#637c82] text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:bg-[#4f6165] transition duration-300 mb-12 mx-auto block">
@@ -281,7 +377,9 @@ const scatteredSketches = [
           Photography
         </h3>
         <p className="text-[#637c82] text-lg sm:text-xl mb-8 text-center max-w-3xl">
-          I capture moments through my lens, exploring landscapes, portraits, and events. My photography journey allows me to connect with others while showcasing my perspective.
+          I capture moments through my lens, exploring landscapes, portraits,
+          and events. My photography journey allows me to connect with others
+          while showcasing my perspective.
         </p>
         <Link to="https://www.instagram.com/chloe.dwyer_photography/">
           <button className="bg-[#637c82] text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:bg-[#4f6165] transition duration-300 mb-12 mx-auto block">
